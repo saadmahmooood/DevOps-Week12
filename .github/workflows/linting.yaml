@@ -11,4 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repository (From GitHub Server)
-        uses: actions/checkout@v4  
+        uses: actions/checkout@v4 
+      - name: create packet.json
+        run: npm init -y
+      - name: Install HTML Hint
+        run: npm install --save-dev htmlhint
+      - name: Run HTMLHint
+        run: npx htmlhint "**/*.html"
