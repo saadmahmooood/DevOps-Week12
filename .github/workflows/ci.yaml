@@ -15,10 +15,10 @@ jobs:
       - name: Install HTMLHint
         run: npm install --save-dev htmlhint
       - name: Install StyleHint
-        run: npm install --save-dev sylelint
+        run: npm install --save-dev stylelint
       - name: Lint HTML Files
         run: npx htmlhint "**/*.html"
       - name: Lint CSS Files
-        run: npx stylelint "**/*.html"
+        run: npx stylelint "**/*.css"
       - name: List Contents of packet.json
-        run: cat packet.json
+        run: cat package.json
