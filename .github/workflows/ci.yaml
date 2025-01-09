@@ -21,4 +21,4 @@ jobs:
       - name: Lint CSS Files
         run: npx stylelint "**/*.css"
       - name: List Contents of packet.json
-        run: cat packet.json
+        run: cat package.json
