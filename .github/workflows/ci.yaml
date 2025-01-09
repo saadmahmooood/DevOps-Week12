@@ -1,0 +1,24 @@
+name: ci-workflow
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Install HTMLHint
+        run: npm install --save-dev htmlhint
+      - name: Install StyleHint
+        run: npm install --save-dev sylelint
+      - name: Lint HTML Files
+        run: npm htmlhint "**/*.html"
+      - name: Lint CSS Files
+        run: npx stylelint "**/*.html"
+      - name: List Contents of packet.json
+        run: cat packet.json
