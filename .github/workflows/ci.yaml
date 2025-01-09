@@ -17,7 +17,7 @@ jobs:
       - name: Install StyleHint
         run: npm install --save-dev sylelint
       - name: Lint HTML Files
-        run: npx htmlhint "**/*.html"
+        run: npm htmlhint "**/*.html"
       - name: Lint CSS Files
         run: npx stylelint "**/*.html"
       - name: List Contents of packet.json
